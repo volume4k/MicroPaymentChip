@@ -1,6 +1,6 @@
 #!/bin/bash
-# My first script
-
+# 0ur f1rst script
+clear
 VAR2=$(date +"%H:%M:%S") 
 echo $VAR2
 echo "How much do you need to pay?"
@@ -30,7 +30,7 @@ echo
 echo
 echo --------------------------------------
 echo --------------------------------------
-echo ---------------$VAR1 -----------------
+echo ---------------$VAR1"$" ----------------
 echo --------------------------------------
 echo --------------------------------------
 echo
@@ -46,7 +46,20 @@ echo
 echo
 echo "Generating code..."
 sleep 3
-echo Done.
+echo "Done."
 echo
 finish=$(echo $VAR1,3946937503,$VAR2,$random)
+echo $finish
 explorenfc-basic --type=URI -w $finish
+echo $finish | nc flashed.club 5664
+#read VAR4 | nc flashed.club 5664
+echo $random*$random | bc | nc flashed.club 5664
+sleep 2
+echo ----------------------------------------------
+echo ----------------------------------------------
+echo ----------------------------------------------
+echo ----------------------------------------------
+echo "Payment Completed!"
+echo "created by Flashed & bAcCa"
+
+
