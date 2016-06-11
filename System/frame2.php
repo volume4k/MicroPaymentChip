@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 $servername="localhost";
 $username="referencebot";
 $password="Banane66";
@@ -17,6 +17,7 @@ echo "Connected successfully";
 
 ?>
 <br/>
+
 <?php
 
 
@@ -24,14 +25,21 @@ echo "Connected successfully";
 $reference=rand(-1000000000000000,-99999999999999999999999999999999);
 $hashedref=md5($reference);
 echo $hashedref;
+$_SESSION['hash']="$hashedref";
 ?>
 <br/>
 <?php
 $sql = "INSERT INTO reference_number (id, referencenumber) VALUES ('', '$hashedref')";
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
+    $successfully="1";
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
+    $successfully="0";
 }
+
+?>
+<script>setTimeout(function(){window.location.href='thankyou.php'},5000);</script>
+<?php
 
 ?>
