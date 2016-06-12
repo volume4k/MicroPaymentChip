@@ -17,3 +17,7 @@ clear
 echo "##########"
 echo "Receipt:"
 echo $PTIME" | AMOUNT: " $AMOUNT"$"
+echo "##########"
+twofactor=$(awk -v min=100000 -v max=999999 'BEGIN{srand(); print int(min+rand()*(max-min+1))}')
+# Generates 2-Factor code.
+echo $PTIME" | 2-Factor: "$twofactor
