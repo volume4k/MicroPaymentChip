@@ -5,3 +5,6 @@ It is completely open-source and please feel free to use any code snippets you w
 
 ## Future plans: 
 I may rewrite this project in Go(lang) and make it actually any good :)
+
+## Switch branch 
+Necessary
